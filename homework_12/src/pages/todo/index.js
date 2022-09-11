@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useState, useRef } from "react";
 import styles from "./edit.module.scss";
 
@@ -23,15 +22,13 @@ const list = [
   },
 ];
 
-export const Edit = ({ add }) => {
+export const Todo = () => {
   const noteRef = useRef();
   const dateRef = useRef();
   const [todo, setTodo] = useState(list);
 
-  const handleState = (id) => {
-    // setTodo();
+  const handleFinish = (id) => {
     setTodo(todo.map(item => {
-      console.log(item);
       if (item.id !== id) return item;
       return {
         ...item,
@@ -39,21 +36,20 @@ export const Edit = ({ add }) => {
       }
     }
     ))
+    console.log(todo)
   }
 
   const addItem = () => {
-    setTodo([...list, {
+    setTodo([...todo, {
       id: todo.length + 1,
       name: noteRef.current.value,
       date: dateRef.current.value,
       state: false,
-    }])
+    }]);
+    noteRef.current.value = "";
+    dateRef.current.value = "";
+    console.log(todo);
   }
-
-  useEffect(() => {
-    document.getElementById("title").innerHTML = "my note";
-    document.querySelector("h1").innerHTML = "my note 4";
-  }, []);
 
   return (
     <div className={styles.edit}>
@@ -67,13 +63,12 @@ export const Edit = ({ add }) => {
       </div>
       <div>
         {todo.map((task, index) => {
-          console.log(index);
           return (
             <div className={styles.card} key={`task-${index}`}>
               <p>{task.name}</p>
               <p>{task.state ? "已完成" : "未完成"}</p>
               <p>預計完成日期：{task.date}</p>
-              {task.state ? "" : <button onClick={() => handleState(task.id)}>完成</button>}
+              {task.state ? "" : <button onClick={() => handleFinish(task.id)}>完成</button>}
             </div>
           )
         })}
