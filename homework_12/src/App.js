@@ -1,16 +1,24 @@
 import { useState, useEffect, useRef } from "react";
-import{Edit} from"./pages/edit";
-import {List} from "./page/list";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Edit } from "./pages/edit";
+import { List } from "./pages/list";
+import { Home } from "./pages/home";
 import "./index.scss";
-const Home = () => {
+const App = () => {
   const [data, setData] = useState([]);
 
   return (
     <div className="app">
-      <Edit add={setData}  />
-      <List listData={data} deleteData={setData} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/edit" element={<Edit />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+      {/* <Edit add={setData} />
+      <List listData={data} deleteData={setData} /> */}
     </div>
   );
 };
 
-export default Home;
+export default App;
