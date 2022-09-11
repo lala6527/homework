@@ -6,13 +6,7 @@ const List = ({ listData, deleteData }) => {
         const { note, data, time, id } = item;
         return (
           <div>{item.note}</div>
-          // <Item
-          // key={id}
-          // id={id}
-          // note={note}
-          // data={data}
-          // time={time}
-          // deleteData={deleteData}/>
+
         );
       })}
 
