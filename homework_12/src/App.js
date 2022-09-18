@@ -1,24 +1,25 @@
-import { useState, useEffect, useRef } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Edit } from "./pages/edit";
-import { List } from "./pages/list";
+import{Header} from'./components/Header';
+import{Footer} from'./components/Footer';
+import { List} from "./pages/list";
 import { Home } from "./pages/home";
-import "./index.scss";
-const App = () => {
-  const [data, setData] = useState([]);
+import { About } from "./pages/about";
+import { Contact } from "./pages/contact";
+import './styles/global.scss';
 
+const App = () => {
   return (
-    <div className="app">
       <BrowserRouter>
+        <Header />
         <Routes>
-          <Route path="/edit" element={<Edit />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="list" element={<List />} />
+          <Route path="/about" element={<About />} />
           <Route path="/" element={<Home />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
-      {/* <Edit add={setData} />
-      <List listData={data} deleteData={setData} /> */}
-    </div>
   );
-};
+}
 
 export default App;
