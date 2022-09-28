@@ -1,5 +1,5 @@
 import{useState,useEffect,useRef} from'react';
-import { Button, Layout } from '../../components';
+import { Layout } from '../../components/Layout';
 import styles from './register.module.scss';
 
 export const Register=()=>{
@@ -86,7 +86,7 @@ return(
                     <input type="text" id="passwordAgain"/>
                     {passwordAgainError &&(<div className={styles.error}>必須與上面輸入醫治的密碼</div>)}
                 </label>
-                <Button onClick={handleRegister}>Register</Button>
+                <button onClick={handleRegister}>Register</button>
         </form>
     </div>
 </Layout>
