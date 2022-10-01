@@ -1,29 +1,45 @@
-.register {
-    form {
-      margin: 30px auto;
-      max-width: 400px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      label {
-        span {
-          margin-right: 4px;
-          color: gray;
-        }
-        input {
-          box-sizing: border-box;
-          padding: 6px 8px;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-          width: 100%;
-        }
+.register{
+margin-left: 400px;
+margin-bottom: 20px;  
+padding: 20px;
+}
+.register{
+  h1{
+    color:sienna;
+  }
+  form{
+    margin-top: 30px auto;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    label{
+      span{
+        margin-right: 4px;
+        color: sienna;
       }
-  
-      .error {
-        margin-top: 4px;
-        color: red;
-        font-size: 14px;
+      input{
+        box-sizing: border-box;
+        padding: 6px 8px;
+        border: 1px solid grey;
+        box-shadow: rgba(0, 0, 0, 0.1);
+        border-radius: 4px;
+        width: 100%;
       }
     }
+    .error{
+      margin-top: 4px;
+      color: red;
+      font-size: 14px;
+    }
+    button{
+      background-color: gold;
+      color: sienna;
+      border: 3px solid gold;
+      border-radius: 4px;
+      font-size: 20px;
+      font-weight:bold;
+    }
   }
-  
+}
+ 

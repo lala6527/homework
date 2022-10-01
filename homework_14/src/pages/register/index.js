@@ -1,5 +1,5 @@
 import{useState,useEffect,useRef} from'react';
-import { Button, Layout } from '../../components';
+// import {Layout } from '../../components/Layout';
 import styles from './register.module.scss';
 
 export const Register=()=>{
@@ -54,10 +54,13 @@ export const Register=()=>{
             setPasswordAgainError(true);
             return;
         }
+        if(!nameError&&!mobileError&&!emailError&&!passwordError&&!passwordAgainError){
+            window.location.href="/";
+        }
     }
 useEffect(()=>{},[]);
 return(
-<Layout className={styles.register}>
+<div className={styles.register}>
     <div className="container">
         <form action="" className={styles.form}>
             <h1>Create Account</h1>
@@ -69,11 +72,11 @@ return(
                 <label htmlFor="email">
                     <span>Email</span>
                     <input type="text" id="email" ref={emailRef} placeholder="e.g yourname@gmail.com"/>
-                    {emailError && (<div className={styles.error}>錯誤</div>)}
+                    {emailError && (<div className={styles.error}>Mail格式錯誤</div>)}
                 </label>
                 <label htmlFor="mobile">
                     <span>Mobile</span>
-                    <input type="text" id="mobile" ref={mobileRef} placeholde="0912345678"/>
+                    <input type="text" id="mobile" ref={mobileRef} placeholder="0912345678"/>
                     {mobileError &&(<div className={styles.error}>手機格式錯誤，請使用數字</div>)}
                 </label>
                 <label htmlFor="password">
@@ -84,11 +87,11 @@ return(
                 <label htmlFor="passwordAgain">
                     <span>Comfirm Password</span>
                     <input type="text" id="passwordAgain"/>
-                    {passwordAgainError &&(<div className={styles.error}>必須與上面輸入醫治的密碼</div>)}
+                    {passwordAgainError &&(<div className={styles.error}>必須與上面輸入一樣的密碼</div>)}
                 </label>
-                <Button onClick={handleRegister}>Register</Button>
+                <button onClick={handleRegister}>送出</button>
         </form>
     </div>
-</Layout>
+</div>
 )
 }
