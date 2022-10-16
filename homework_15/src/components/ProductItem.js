@@ -15,8 +15,8 @@ return(
     <div style={themeStyles}>
         <div className={styles.productItem}>
            <img src={item.img} alt="" style={styles.img} />
-           <h3>{item.name}</h3>
-           <p>{item.price}</p>
+           <h3>商品 : {item.name}</h3>
+           <p>價格$ {item.price}</p>
         </div>
     </div>
 )
