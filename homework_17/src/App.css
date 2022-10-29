@@ -1,0 +1,56 @@
+*{
+margin: 0;
+padding: 0;
+}
+.App{
+  background-color: rgb(245, 170, 170);
+  height: 100vh;
+}
+
+.container{
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1{
+  padding: 20px 0;
+  text-align: center;
+  color: rgb(151, 20, 20);
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:12px;
+}
+
+.grid .item{
+  background-color: white;
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0px 1px 5px raba(0,0,0,0.02);
+}
+
+.grid .item:hover{
+ cursor: pointer;
+}
+
+.grid .item:hover .name{
+  font-weight: bold;
+}
+
+.grid .item img{
+  transition: all 0.5s ease;
+  transform:scale(1) ;
+}
+
+
+.grid .item:hover img{
+  transform: rotateY(180deg) scale(1.5);
+}
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+}

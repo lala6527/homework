@@ -1,6 +1,4 @@
 .register{
-margin-left: 400px;
-margin-bottom: 20px;  
 padding: 20px;
 }
 .register{
@@ -8,7 +6,7 @@ padding: 20px;
     color:sienna;
   }
   form{
-    margin-top: 30px auto;
+    margin: 30px auto;
     max-width: 400px;
     display: flex;
     flex-direction: column;
@@ -32,14 +30,14 @@ padding: 20px;
       color: red;
       font-size: 14px;
     }
-    button{
-      background-color: gold;
-      color: sienna;
-      border: 3px solid gold;
-      border-radius: 4px;
-      font-size: 20px;
-      font-weight:bold;
-    }
+    // button{
+    //   background-color: gold;
+    //   color: sienna;
+    //   border: 3px solid gold;
+    //   border-radius: 4px;
+    //   font-size: 20px;
+    //   font-weight:bold;
+    // }
   }
 }
  

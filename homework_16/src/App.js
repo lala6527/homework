@@ -1,6 +1,14 @@
 import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, PointElement, LineElement, ArcElement, Title, Tooltip, Legend, RadialLinearScale, Filler } from 'chart.js';
 import {Radar , Doughnut , Line ,Bar} from 'react-chartjs-2';
-import {AppBar } from './AppBar';
+import  ButtonAppBar  from './ButtonAppBar';
+// import * as React from 'react';
+// import AppBar from '@mui/material/AppBar';
+// import Box from '@mui/material/Box';
+// import Toolbar from '@mui/material/Toolbar';
+// import Typography from '@mui/material/Typography';
+// import Button from '@mui/material/Button';
+// import IconButton from '@mui/material/IconButton';
+// import MenuIcon from '@mui/icons-material/Menu';
 import './App.css';
 
 function App() {
@@ -139,7 +147,26 @@ const optionsBar = {
 
   return(
     <div className="App">
-      <AppBar />
+      <ButtonAppBar />
+      {/* <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            News
+          </Typography>
+          <Button color="inherit">Login</Button>
+        </Toolbar>
+      </AppBar>
+    </Box> */}
       <h1 className='title'>Lulu</h1>
       <div className='grid'>
       <div className='box'>

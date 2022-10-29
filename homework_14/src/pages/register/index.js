@@ -1,64 +1,65 @@
 import{useState,useEffect,useRef} from'react';
-// import {Layout } from '../../components/Layout';
+ import {Button} from '../../components/Button';
 import styles from './register.module.scss';
 
-export const Register=()=>{
+export const Register = ( ) => {
     const nameRef = useRef();
     const emailRef = useRef();
     const mobileRef = useRef();
     const passwordRef = useRef();
     const passwordAgainRef = useRef();
 
-    const nameRegex=/\w/g;
-    const mobileRegex=/\d{10}/g;
-    const emailRegex=/[a-z0-9]@[a-z]{2,3}/g;
-    const passwordRegex=/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/g;
+    const nameRegex = /\w/;
+    const emailRegex = /[A-Za-z0-9]*@[a-z]+\.[a-z]{2,3}$/;
+    const mobileRegex = /^09[0-9]{8}$/;
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
 
-    const[nameError,setNameError]=useState(false);
-    const[emailError,setEmailError]=useState(false);
-    const[mobileError,setMoblieError]=useState(false);
-    const[passwordError,setPasswordError]=useState(false);
-    const[passwordAgainError,setPasswordAgainError]=useState(false);
+    const[nameError,setNameError] = useState(null);
+    const[emailError,setEmailError] = useState(null);
+    const[mobileError,setMoblieError] = useState(null);
+    const[passwordError,setPasswordError] = useState(null);
+    const[passwordAgainError,setPasswordAgainError] = useState(null);
 
     const handleRegister=(e)=>{
         e.preventDefault();
+
         if(nameRegex.test(nameRef.current.value)){
             setNameError(false);
         }else{
             setNameError(true);
-            return true;
         }
+
         if(emailRegex.test(emailRef.current.value)){
             setEmailError(false);
         }else{
             setEmailError(true);
-            return true;
         }
+
         if(mobileRegex.test(mobileRef.current.value)){
             setMoblieError(false);
         }else{
             setMoblieError(true);
-            return true;
         }            
         if(passwordRegex.test(passwordRef.current.value)){
             setPasswordError(false);
         }else{
             setPasswordError(true);
-            return true;
         }
 
-        if(passwordRef.current.value===passwordAgainRef.current.value)
+        if(passwordRef.current.value === passwordAgainRef.current.value && passwordAgainRef.current.value!="")
         {
             setPasswordAgainError(false);
         }else{
             setPasswordAgainError(true);
-            return;
         }
-        if(!nameError&&!mobileError&&!emailError&&!passwordError&&!passwordAgainError){
+        if(nameError || mobileError || emailError || passwordError || passwordAgainError){
+            return false;
+        }
+        if(nameError=== false && mobileError === false && emailError === false && passwordError === false && passwordAgainError === false){
             window.location.href="/";
         }
     }
-useEffect(()=>{},[]);
+
 return(
 <div className={styles.register}>
     <div className="container">
@@ -81,15 +82,15 @@ return(
                 </label>
                 <label htmlFor="password">
                     <span>Password</span>
-                    <input type="password" id="password"/>
+                    <input type="password" id="password" ref={passwordRef}/>
                     {passwordError &&(<div className={styles.error}>密碼格式錯誤</div>)}
                 </label>
                 <label htmlFor="passwordAgain">
                     <span>Comfirm Password</span>
-                    <input type="text" id="passwordAgain"/>
+                    <input type="password" id="passwordAgain" ref={passwordAgainRef}/>
                     {passwordAgainError &&(<div className={styles.error}>必須與上面輸入一樣的密碼</div>)}
                 </label>
-                <button onClick={handleRegister}>送出</button>
+                <Button onClick={handleRegister}>送出</Button>
         </form>
     </div>
 </div>
