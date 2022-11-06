@@ -13,7 +13,7 @@
   text-align: center;
 }
 
-.talbe{
+.table{
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   width: 100%;
@@ -32,14 +32,14 @@
   tbody{
     tr{
       &:hover{
-        background-color: aliceblue;
+        background-color: rgb(245, 235, 197);
         cursor: pointer;
       }
       &:nth-child(even){
-        background-color: aliceblue ;
+        background-color:  rgb(245, 235, 197);
       }
       td{
-        border-bottom: 1px solid  aliceblue;
+        border-bottom: 1px solid   rgb(245, 235, 197);
         padding: 8px;
         text-transform: capitalize;
       }
@@ -54,10 +54,10 @@
 .btn{
   display: inline-block;
   padding: 8px;
-  background-color:  aliceblue;
+  background-color:  rgb(245, 235, 197);
   border: 1px solid grey ;
   &:hover{
-    background-color: azure;
+    background-color: darkorange;
     cursor: pointer;
   }
 }
