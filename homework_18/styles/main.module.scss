@@ -1,0 +1,63 @@
+.actions {
+  margin: 20px ,0;
+  background-color: rgb(237, 236, 207);
+  padding: 20px;
+  border-radius: 8px;
+  label{
+    margin-right: 8px;
+  }
+}
+
+.loading{
+  padding: 20px;
+  text-align: center;
+}
+
+.talbe{
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  width: 100%;
+  margin: 20px 0;
+  border-spacing: 0;
+  overflow: hidden;
+  border-bottom: 3px solid gold;
+  thead{
+    background-color: darkorange;
+    color: rgb(255, 232, 217);
+    th{
+      text-align: left;
+      padding: 8px;
+    }
+  }
+  tbody{
+    tr{
+      &:hover{
+        background-color: aliceblue;
+        cursor: pointer;
+      }
+      &:nth-child(even){
+        background-color: aliceblue ;
+      }
+      td{
+        border-bottom: 1px solid  aliceblue;
+        padding: 8px;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+.card{
+  padding: 12px;
+  box-shadow: 0px 2px 2px raba(0,0,0,0.25);
+}
+.btn{
+  display: inline-block;
+  padding: 8px;
+  background-color:  aliceblue;
+  border: 1px solid grey ;
+  &:hover{
+    background-color: azure;
+    cursor: pointer;
+  }
+}
