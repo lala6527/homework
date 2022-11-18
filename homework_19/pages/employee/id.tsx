@@ -37,7 +37,7 @@ export default function EmployeeDetail(data: any){
                     </div>
                     <div className={styles.photo}>
                         <Image 
-                        src={require("public/images/user-placeholder.webp")}
+                        src={require("public/images/logo.png")}
                         alt={user.name}
                         width={240}
                         height={240}
@@ -75,7 +75,9 @@ export default function EmployeeDetail(data: any){
       const data = await res.json();
       console.log("data",data)
       return{
+        props:{
         ...data,
+        }
       }  
-    }
+    };
 

@@ -1,9 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import{ useRouter } from 'next/router';
-import { userAgentFromString } from 'next/server';
 import{useEffect,useState,useRef} from 'react';
-import { isTemplateExpression } from 'typescript';
 import styles from '/styles/main.module.scss'; 
 
 const APIURL = "https://script.google.com/macros/s/AKfycby14-_yDoPPNNc_QX3swZBHoIkuxIX_PICZ8kUR_KuC4c-cfo1Hh3EqRBDhQKixwWqPPQ/exec";
@@ -24,7 +22,7 @@ export default function EmployeeList(){
     const teamRef = useRef<HTMLInputElement>(null);
     const roleRef = useRef<HTMLInputElement>(null);
 
-    const fetchData =async () =>{
+    const fetchData = async () =>{
         setIsLoading(true);
         await fetch(`${APIURL}?0`)
         .then(res => res.json())

@@ -15,7 +15,7 @@ const PostList = ({posts}: Posts) =>{
         <div className="container">
             <div className={styles.card}>
                 <h1>List of Posts</h1>
-                {posts.map((post:any)=>{
+                {posts.map((post: any)=>{
                     return(
                         <div key={post.id}>
                             <Link href={`poosts/${post.id}`}>
@@ -37,13 +37,18 @@ const PostList = ({posts}: Posts) =>{
 export default PostList;
 
 export const getStaticProps = async () =>{
-  const response = await fetch('https://jsonplaceholder.typicode.com/posts')
- const data = await response.json()
+const response = await fetch('https://jsonplaceholder.typicode.com/posts')
+const data = await response.json()
  
  return{
     props:{
-        post: data
+        posts: data
     }
  }
 
 }
+
+
+
+
+
