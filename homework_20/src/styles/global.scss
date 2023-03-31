@@ -7,10 +7,10 @@ body{
     @media (max-width:767px) {
         width: 100%;
     }
-    @media (max-width:768px) {
+    @media (min-width:768px) {
         width: 720px;
     }
-    @media (max-width:1200px) {
+    @media (min-width:1200px) {
         width: 1140px;
     }
     
@@ -60,7 +60,7 @@ body{
     img{
         width: 32px;
     }
-    @media screen and (max-width:768px) {
+    @media screen and (min-width:768px) {
         display: block;
         position: absolute;
         top: 20px;
@@ -103,11 +103,11 @@ body{
         @media screen and (max-width:767px){
             grid-template-columns: repeat(5, 1fr);    
         }
-        @media screen and (max-width:768px){
+        @media screen and (min-width:768px){
             grid-template-columns: repeat(5, 1fr);    
             
         }
-        @media screen and (max-width:1200px){
+        @media screen and (min-width:1200px){
             grid-template-columns: repeat(10, 1fr);    
 
     }
@@ -157,13 +157,13 @@ body{
             grid-template-columns: repeat(2, 1fr);    
         }
     }
-        @media screen and (max-width:768px){
+        @media screen and (min-width:768px){
             .grid{
             grid-template-columns: repeat(3, 1fr);    
             
         }
     }
-        @media screen and (max-width:1024px){ 
+        @media screen and (min-width:1024px){ 
 
         .grid{
             grid-template-columns: repeat(6,1fr);
